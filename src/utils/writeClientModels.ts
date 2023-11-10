@@ -16,6 +16,7 @@ import type { Templates } from './registerHandlebarTemplates';
  * @param outputPath Directory to write the generated files to
  * @param httpClient The selected httpClient (fetch, xhr, node or axios)
  * @param useUnionTypes Use union types instead of enums
+ * @param useTuples Convert constant size arrays to tuples
  * @param indent Indentation options (4, 2 or tab)
  * @param transformCase Transform model case (camel, snake)
  */
@@ -25,6 +26,7 @@ export const writeClientModels = async (
     outputPath: string,
     httpClient: HttpClient,
     useUnionTypes: boolean,
+    useTuples: boolean,
     indent: Indent,
     transformCase: Case
 ): Promise<void> => {
@@ -35,6 +37,7 @@ export const writeClientModels = async (
             ...newModel,
             httpClient,
             useUnionTypes,
+            useTuples,
         });
         await writeFile(file, i(f(templateResult), indent));
     }

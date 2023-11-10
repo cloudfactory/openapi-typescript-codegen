@@ -20,6 +20,7 @@ export type Options = {
     clientName?: string;
     useOptions?: boolean;
     useUnionTypes?: boolean;
+    useTuples?: boolean;
     exportCore?: boolean;
     exportServices?: boolean;
     exportModels?: boolean;
@@ -60,6 +61,7 @@ export const generate = async ({
     clientName,
     useOptions = false,
     useUnionTypes = false,
+    useTuples = false,
     exportCore = true,
     exportServices = true,
     exportModels = true,
@@ -77,6 +79,7 @@ export const generate = async ({
         httpClient,
         useUnionTypes,
         useOptions,
+        useTuples,
     });
 
     switch (openApiVersion) {
@@ -91,6 +94,7 @@ export const generate = async ({
                 httpClient,
                 useOptions,
                 useUnionTypes,
+                useTuples,
                 exportCore,
                 exportServices,
                 exportModels,
@@ -116,6 +120,7 @@ export const generate = async ({
                 httpClient,
                 useOptions,
                 useUnionTypes,
+                useTuples,
                 exportCore,
                 exportServices,
                 exportModels,

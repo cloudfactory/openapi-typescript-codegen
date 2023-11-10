@@ -42,6 +42,7 @@ export const writeClient = async (
     httpClient: HttpClient,
     useOptions: boolean,
     useUnionTypes: boolean,
+    useTuples: boolean,
     exportCore: boolean,
     exportServices: boolean,
     exportModels: boolean,
@@ -111,6 +112,7 @@ export const writeClient = async (
             outputPathModels,
             httpClient,
             useUnionTypes,
+            useTuples,
             indent,
             transformCase
         );
@@ -128,6 +130,7 @@ export const writeClient = async (
             templates,
             outputPath,
             useUnionTypes,
+            useTuples,
             exportCore,
             exportServices,
             exportModels,
