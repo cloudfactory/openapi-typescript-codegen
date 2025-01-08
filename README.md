@@ -4,8 +4,6 @@ This is a fork of the original OpenAPI Typescript Codegen library. It is only me
 
 To install this fork: `npm install @cloudfactory/openapi-typescript-codegen`
 
-At the time of writing the `feature/omit-read-only` branch is published as the latest npm version
-
 Original ReadMe below
 
 # Important announcement
