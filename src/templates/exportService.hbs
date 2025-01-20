@@ -84,7 +84,10 @@ export class {{{name}}}{{{@root.postfix}}} {
 	public {{{name}}}({{>parameters}}): Observable<{{>result}}> {
 		return __request(OpenAPI, this.http, {
 	{{else}}
-	public static {{{name}}}({{>parameters}}): CancelablePromise<{{>result}}> {
+		public static {{{name}}}({{>parameters}}{{#if parameters}},{{/if}}
+	requestParams?: {
+		disableTransformCase?: boolean;
+	}): CancelablePromise<{{>result}}> {
 		return __request(OpenAPI, {
 	{{/equals}}
 	{{/if}}
@@ -146,7 +149,7 @@ export class {{{name}}}{{{@root.postfix}}} {
 				{{/each}}
 			},
 			{{/if}}
-		});
+		}, requestParams);
 	}
 
 	{{/each}}
